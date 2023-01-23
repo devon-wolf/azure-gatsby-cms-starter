@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: This is the Title
+title: This is a Change I Am Making on Staging
 image: /img/home-jumbotron.jpg
 heading: A Place to Test Editing
 subheading: I Am a Subheading
