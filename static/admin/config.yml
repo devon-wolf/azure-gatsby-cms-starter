@@ -8,6 +8,8 @@ backend:
     delete: "Delete {{collection}} “{{slug}}”"
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
+  site_domain: gray-sand-0dd73691e.2.azurestaticapps.net
+  base_url: https://api.netlify.com
 
 local_backend: true
 media_folder: static/img
