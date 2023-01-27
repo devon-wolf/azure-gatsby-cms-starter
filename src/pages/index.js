@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-import YMLContent from "./index.yml";
-import Content from "../components/Content";
-import Layout from "../components/Layout";
+import YMLContent from './index.yml'
+import Content from '../components/Content'
+import Layout from '../components/Layout'
 
 const IndexPage = () => {
   return (
@@ -25,7 +25,7 @@ const IndexPage = () => {
         </div>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
