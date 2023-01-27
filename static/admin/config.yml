@@ -1,15 +1,15 @@
 backend:
-  name: github
-  repo: devon-wolf/azure-gatsby-cms-starter
-  branch: main
+  name: gitlab
+  repo: devon-wolf/gatsby-cms-2
+  branch: master
+  auth_type: pkce
+  app_id: 17365e6d95dc68a12025b781171cdac2e3f0170a5437438d1c90eb1d2effec69
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
     delete: "Delete {{collection}} “{{slug}}”"
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
-  site_domain: gray-sand-0dd73691e.2.azurestaticapps.net
-  base_url: https://api.netlify.com
 
 local_backend: true
 media_folder: static/img
