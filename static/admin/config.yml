@@ -1,6 +1,6 @@
 backend:
   name: gitlab
-  repo: devon-wolf/gatsby-cms-2
+  repo: devon-wolf/portal-data-model
   branch: master
   auth_type: pkce
   app_id: 17365e6d95dc68a12025b781171cdac2e3f0170a5437438d1c90eb1d2effec69
@@ -12,237 +12,102 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
 local_backend: true
-media_folder: static/img
-public_folder: /img
+media_folder: solutions/test-solution/assets # there is actually a folder for each solution or partner, for this test I'll target the one for the target file
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
-
-  - name: "pages"
-    label: "Pages"
+  - name: "solutions"
+    label: "Solutions"
+    # for now, just test on a single file
+    # folder: "solutions"
+    # create: true
+    # slug: {{slug}}
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
+      - file: "solutions/test-solution/solution.yml"
+        label: "Test Solution"
+        name: "test"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
-            }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - { label: Group, name: group, widget: string }
+          - { label: Disabled, name: disabled, widget: boolean }
           - {
-              label: Mainpitch,
-              name: mainpitch,
+              label: Main Focus,
+              name: mainFocus,
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
-            }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Media, name: media, widget: image },
                   {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
+                    label: Description,
+                    name: mainFocusDescription,
+                    widget: text,
+                  },
+                  {
+                    label: Link,
+                    name: link,
+                    widget: object,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: link, widget: string },
+                        {
+                          label: Linked Asset Reference,
+                          name: linkedAssetReference,
+                          widget: string,
+                        },
                       ],
                   },
                 ],
             }
           - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "product-page",
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Testimonials,
-              name: testimonials,
+              label: Sections,
+              name: sections,
               widget: list,
               fields:
                 [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
-            }
-          - { label: Full_image, name: full_image, widget: image }
-          - {
-              label: Pricing,
-              name: pricing,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: string },
+                  { label: Category, name: category, widget: string },
                   {
-                    label: Plans,
-                    name: plans,
+                    label: Entries,
+                    name: entries,
                     widget: list,
                     fields:
                       [
-                        { label: Plan, name: plan, widget: string },
-                        { label: Price, name: price, widget: string },
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: link, widget: string },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Linked Assets,
+              name: linkedAssets,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Demo Video Example,
+                    name: demo-video-example,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: link, widget: string },
+                        { label: Description, name: description, widget: text },
                         {
-                          label: Description,
-                          name: description,
+                          label: Resource Type,
+                          name: resourceType,
                           widget: string,
                         },
-                        { label: Items, name: items, widget: list },
+                        {
+                          label: Duration,
+                          name: durationMinutes,
+                          widget: number,
+                        },
+                        {
+                          label: Technical Level,
+                          name: technicalLevel,
+                          widget: number,
+                        },
                       ],
                   },
                 ],
