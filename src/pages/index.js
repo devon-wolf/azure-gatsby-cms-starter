@@ -1,7 +1,6 @@
 import React from 'react'
 
-import YMLContent from './index.yml'
-import Content from '../components/Content'
+import YMLContent from '../content/index.yml'
 import Layout from '../components/Layout'
 
 const IndexPage = () => {
@@ -15,10 +14,9 @@ const IndexPage = () => {
                 <h1 className="title is-size-3 has-text-weight-bold is-bold-light">
                   {YMLContent.title}
                 </h1>
-                <Content
-                  className="content"
-                  content={<p>{YMLContent.content}</p>}
-                />
+                <div className="content">
+                  <p>{YMLContent.content}</p>
+                </div>
               </div>
             </div>
           </div>
