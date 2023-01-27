@@ -1,7 +1,7 @@
 backend:
   name: gitlab
   repo: devon-wolf/portal-data-model
-  branch: master
+  branch: main
   auth_type: pkce
   app_id: 17365e6d95dc68a12025b781171cdac2e3f0170a5437438d1c90eb1d2effec69
   commit_messages:
