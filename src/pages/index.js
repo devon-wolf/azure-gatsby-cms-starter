@@ -1,7 +1,8 @@
-import React from 'react'
-import Content from '../components/Content'
+import React from "react";
 
-import Layout from '../components/Layout'
+import YMLContent from "./index.yml";
+import Content from "../components/Content";
+import Layout from "../components/Layout";
 
 const IndexPage = () => {
   return (
@@ -12,16 +13,19 @@ const IndexPage = () => {
             <div className="column is-10 is-offset-1">
               <div className="section">
                 <h1 className="title is-size-3 has-text-weight-bold is-bold-light">
-                  Welcome to This Test
+                  {YMLContent.title}
                 </h1>
-                <Content className="content" content={<p>Hello, world</p>} />
+                <Content
+                  className="content"
+                  content={<p>{YMLContent.content}</p>}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
