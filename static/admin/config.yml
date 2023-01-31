@@ -35,24 +35,37 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Media, name: media, widget: image },
+                  { label: Media, name: media, widget: image, required: false },
                   {
                     label: Description,
                     name: mainFocusDescription,
                     widget: text,
+                    required: false,
                   },
                   {
                     label: Link,
                     name: link,
                     widget: object,
+                    required: false,
                     fields:
                       [
-                        { label: Label, name: label, widget: string },
-                        { label: URL, name: link, widget: string },
+                        {
+                          label: Label,
+                          name: label,
+                          widget: string,
+                          required: false,
+                        },
+                        {
+                          label: URL,
+                          name: link,
+                          widget: string,
+                          required: false,
+                        },
                         {
                           label: Linked Asset Reference,
                           name: linkedAssetReference,
                           widget: string,
+                          required: false,
                         },
                       ],
                   },
@@ -62,18 +75,42 @@ collections:
               label: Sections,
               name: sections,
               widget: list,
+              allow_add: true,
+              required: false,
               fields:
                 [
-                  { label: Category, name: category, widget: string },
+                  {
+                    label: Category,
+                    name: category,
+                    widget: string,
+                    required: false,
+                  },
                   {
                     label: Entries,
                     name: entries,
                     widget: list,
+                    allow_add: true,
+                    required: false,
                     fields:
                       [
-                        { label: Label, name: label, widget: string },
-                        { label: URL, name: link, widget: string },
-                        { label: Description, name: description, widget: text },
+                        {
+                          label: Label,
+                          name: label,
+                          widget: string,
+                          required: false,
+                        },
+                        {
+                          label: URL,
+                          name: link,
+                          widget: string,
+                          required: false,
+                        },
+                        {
+                          label: Description,
+                          name: description,
+                          widget: text,
+                          required: false,
+                        },
                       ],
                   },
                 ],
@@ -82,31 +119,51 @@ collections:
               label: Linked Assets,
               name: linkedAssets,
               widget: object,
+              required: false,
               fields:
                 [
                   {
                     label: Demo Video Example,
                     name: demo-video-example,
                     widget: object,
+                    required: false,
                     fields:
                       [
-                        { label: Label, name: label, widget: string },
-                        { label: URL, name: link, widget: string },
-                        { label: Description, name: description, widget: text },
+                        {
+                          label: Label,
+                          name: label,
+                          widget: string,
+                          required: false,
+                        },
+                        {
+                          label: URL,
+                          name: link,
+                          widget: string,
+                          required: false,
+                        },
+                        {
+                          label: Description,
+                          name: description,
+                          widget: text,
+                          required: false,
+                        },
                         {
                           label: Resource Type,
                           name: resourceType,
                           widget: string,
+                          required: false,
                         },
                         {
                           label: Duration,
                           name: durationMinutes,
                           widget: number,
+                          required: false,
                         },
                         {
                           label: Technical Level,
                           name: technicalLevel,
                           widget: number,
+                          required: false,
                         },
                       ],
                   },

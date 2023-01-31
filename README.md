@@ -6,6 +6,8 @@ The CMS that can be accessed via GitLab auth at the `/admin/` endpoint is linked
 
 This is a quick proof of concept and remains incomplete; check out the stuff still to be done!
 
+Almost all fields have been set to not required for ease of playing around.
+
 # TODO
 - Actually work with multiple solutions within the target directory
 - Determine how to work with nested media folders - possible?
